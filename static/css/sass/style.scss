@@ -21,7 +21,7 @@ body {
         }
         .slider-short-content {
             position: relative;
-            height: 10em;
+            height: 6.5em;
             border: 0.1em solid $blue;
             margin: 2em 0;
             background-color: $white;
@@ -31,7 +31,6 @@ body {
                 border-radius: 50%;
                 position: absolute;
                 margin-left: -3.2em;
-                margin-top: 2em;
                 padding: 0.8em;
                 background: #fff none repeat scroll 0 0
             }
@@ -42,21 +41,23 @@ body {
             .name {
                 font-weight: bold;
                 float: left;
+                margin-left: 2em;
             }
             .job {
                 float: right;
+                font-style: italic;
             }
             .skill {
                 display: block;
                 ul {
-                    margin-bottom: 1.6em;
                     overflow: hidden;
                     width: 100%;
+                    position: absolute;
+                    margin-top: 1.2em;
+                    padding-left: 17px;
                     li {
-                        position: relative;
                         float: left;
                         list-style: none;
-                        margin:1em;
                         width: 3em;
                         height: 3em;
                         text-align: center;
@@ -84,10 +85,13 @@ body {
                     color: $blue;
                     border: 1px solid $blue;
                     text-decoration: none;
-                    padding: 3px 5px;
-                    width: 50%;
+                    padding: 3px;
+                    width: 30%;
                     display: inline-block;
-                    font-size: 0.6em;
+                    font-size: 0.5em;
+                    margin-right: 2em;
+                    float: right;
+                    margin-bottom: -10px;
 
                 }
             }

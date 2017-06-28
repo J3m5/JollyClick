@@ -15,7 +15,7 @@ body {
       margin: 0em; }
     body #slider .slider-short-content {
       position: relative;
-      height: 10em;
+      height: 6.5em;
       border: 0.1em solid #66bbf9;
       margin: 2em 0;
       background-color: #fff;
@@ -25,7 +25,6 @@ body {
         border-radius: 50%;
         position: absolute;
         margin-left: -3.2em;
-        margin-top: 2em;
         padding: 0.8em;
         background: #fff none repeat scroll 0 0; }
       body #slider .slider-short-content .name, body #slider .slider-short-content .job {
@@ -33,20 +32,22 @@ body {
         font-size: 0.6em; }
       body #slider .slider-short-content .name {
         font-weight: bold;
-        float: left; }
+        float: left;
+        margin-left: 2em; }
       body #slider .slider-short-content .job {
-        float: right; }
+        float: right;
+        font-style: italic; }
       body #slider .slider-short-content .skill {
         display: block; }
         body #slider .slider-short-content .skill ul {
-          margin-bottom: 1.6em;
           overflow: hidden;
-          width: 100%; }
+          width: 100%;
+          position: absolute;
+          margin-top: 1.2em;
+          padding-left: 17px; }
           body #slider .slider-short-content .skill ul li {
-            position: relative;
             float: left;
             list-style: none;
-            margin: 1em;
             width: 3em;
             height: 3em;
             text-align: center; }
@@ -69,10 +70,13 @@ body {
           color: #66bbf9;
           border: 1px solid #66bbf9;
           text-decoration: none;
-          padding: 3px 5px;
-          width: 50%;
+          padding: 3px;
+          width: 30%;
           display: inline-block;
-          font-size: 0.6em; }
+          font-size: 0.5em;
+          margin-right: 2em;
+          float: right;
+          margin-bottom: -10px; }
 
 @media screen and (min-width: 1072px) {
   body .btn-view {
