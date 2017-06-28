@@ -1,14 +1,9 @@
 
 <?php
 
-$bdd = new PDO('mysql:host=localhost;dbname=JollyClick;charset=utf8', 'root', 'admin');
-
-) {
-
-
-
-	$user =$bdd->query('
-		SELECT user_id, skill_id 
+	$user =$conn->query('
+		INSERT INTO liked_result (ID_porteur, ID_user)
+		SELECT ID_porteur, user_id
 
 		FROM clicker_skills  
 		INNER JOIN liked_skills
@@ -17,17 +12,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=JollyClick;charset=utf8', 'root', 'a
 		');
 
 
-	$data = $user->fetchAll();
+	 
+$requete->execute();
 
-	foreach($data as $data_user){
-		?><p>
-		<?php echo"Profil competent :".$data_user['user_id'];}?>
-	</p><br/>
-
-
-
-
-
-
-
-
+?>
