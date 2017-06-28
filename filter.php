@@ -1,7 +1,7 @@
 
 <?php
 
-$bdd = new PDO('mysql:host=localhost;dbname=jollyclick;charset=utf8', 'root', 'root');
+$bdd = new PDO('mysql:host=localhost;dbname=JollyClick;charset=utf8', 'root', 'admin');
 
 $reponse = $bdd->query('SELECT ID_skill, compteur FROM liked_skills');
 
