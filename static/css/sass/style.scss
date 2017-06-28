@@ -2,4 +2,99 @@
 
 body {
     font-family: 'Oxygen', sans-serif;
+    #slider {
+        background-color: $blue;
+        // width: 33%;
+        padding: 0;
+        float: right;
+        box-shadow: 2px 2px 1px 0 rgba(0, 0, 0, 0.1);
+        margin: 2em;
+
+        .suggestion {
+            padding: 0.7em 0.4em;
+            font-size: 1.3em;
+            color: $white;
+            text-align: center;
+        }
+        .slider-short-content:first-of-type {
+            margin: 0em;
+        }
+        .slider-short-content {
+            position: relative;
+            height: 10em;
+            border: 0.1em solid $blue;
+            margin: 2em 0;
+            background-color: $white;
+            padding: 1em;
+            .profils {
+                border: 1px solid #ccc;
+                border-radius: 50%;
+                position: absolute;
+                margin-left: -3.2em;
+                margin-top: 2em;
+                padding: 0.8em;
+                background: #fff none repeat scroll 0 0
+            }
+            .name, .job {
+                display: inline-block;
+                font-size: 0.6em;
+            }
+            .name {
+                font-weight: bold;
+                float: left;
+            }
+            .job {
+                float: right;
+            }
+            .skill {
+                ul {
+                    li {
+                        display: block;
+                        float: left;
+                        list-style: none;
+                        margin:1em;
+                        img {
+                            border: 1px solid #ccc;
+                            border-radius: 50%;
+                            position: absolute;
+                            // margin-left: -3.2em;
+                            // margin-top: 2em;
+                            padding: 0;
+                            background: #fff none repeat scroll 0 0;
+                            width: 15%;
+                        }
+                        p {
+                            font-size: 0.4em;
+                            text-align: center;
+                            position: absolute;
+                        }
+                    }
+                }
+            }
+            .footer {
+                text-align: center;
+                position: absolute;
+                bottom: 1em;
+                margin-left: -1em;
+                width: 100%;
+                .btn-view {
+                    color: $blue;
+                    border: 1px solid $blue;
+                    text-decoration: none;
+                    padding: 3px 5px;
+                    width: 50%;
+                    display: inline-block;
+                    font-size: 0.6em;
+
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 1072px) {
+    body {
+        .btn-view {
+            margin-top: 29%;
+        }
+    }
 }
