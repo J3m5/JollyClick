@@ -36,22 +36,29 @@ body {
         float: left; }
       body #slider .slider-short-content .job {
         float: right; }
-      body #slider .slider-short-content .skill ul li {
-        display: block;
-        float: left;
-        list-style: none;
-        margin: 1em; }
-        body #slider .slider-short-content .skill ul li img {
-          border: 1px solid #ccc;
-          border-radius: 50%;
-          position: absolute;
-          padding: 0;
-          background: #fff none repeat scroll 0 0;
-          width: 15%; }
-        body #slider .slider-short-content .skill ul li p {
-          font-size: 0.4em;
-          text-align: center;
-          position: absolute; }
+      body #slider .slider-short-content .skill {
+        display: block; }
+        body #slider .slider-short-content .skill ul {
+          margin-bottom: 1.6em;
+          overflow: hidden;
+          width: 100%; }
+          body #slider .slider-short-content .skill ul li {
+            position: relative;
+            float: left;
+            list-style: none;
+            margin: 1em;
+            width: 3em;
+            height: 3em;
+            text-align: center; }
+            body #slider .slider-short-content .skill ul li img {
+              border: 1px solid #ccc;
+              border-radius: 50%;
+              width: 53%; }
+            body #slider .slider-short-content .skill ul li p {
+              font-size: 0.4em;
+              text-align: center;
+              align-self: flex-end;
+              margin: 0.5em; }
       body #slider .slider-short-content .footer {
         text-align: center;
         position: absolute;
