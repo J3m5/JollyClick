@@ -3,23 +3,30 @@
 
 $bdd = new PDO('mysql:host=localhost;dbname=jollyclick;charset=utf8', 'root', 'root');
 
-$reponse = $bdd->query('SELECT ID_skill, compteur FROM liked_skills');
+// $reponse = $bdd->query('SELECT ID_skill, compteur FROM liked_skills');
 
 
-$donnees = $reponse->fetchAll();
+// $donnees = $reponse->fetchAll();
 
-foreach ($donnees as $ID_skill => $value) {
-	
-	?><p><?php echo"compétences :".($value[0]); ?> <br/> <?php echo " compteur ".($value[1]);
-	$user=$bdd->query('SELECT user_ID FROM clicker_skills WHERE clicker_skills.user_ID = liked_skill.ID_user');
+// foreach ($donnees as $ID_skill => $value) {
 
-	foreach($donnees as $user_ID => $value){
-		?><p>
-		<?php echo " clicker competent :".($value[0]);}?>
-	</p><br/>
-	<?php
-}
-?>
+
+
+$user =$bdd->query('
+	SELECT user_id, skill_id 
+
+	FROM clicker_skills  
+	INNER JOIN liked_skills
+	ON clicker_skills.skill_id = liked_skills.ID_skill');
+
+
+$data = $user->fetchAll();
+
+foreach($data as $data_user){
+	?><p>
+	<?php echo"clicker competent :".$data_user['user_id'];}?>
+</p><br/>
+
 
 
 
