@@ -1,43 +1,41 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
--- https://www.phpmyadmin.net/
+-- version 4.2.12deb2+deb8u2
+-- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Jun 27, 2017 at 04:04 PM
--- Server version: 5.7.18-0ubuntu0.16.04.1
--- PHP Version: 7.0.18-0ubuntu0.16.04.1
+-- Client :  localhost
+-- Généré le :  Mer 28 Juin 2017 à 15:23
+-- Version du serveur :  5.5.54-0+deb8u1
+-- Version de PHP :  5.6.30-0+deb8u1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- Database: `JollyClick`
+-- Base de données :  `JollyClick`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `clicker_skills`
+-- Structure de la table `clicker_skills`
 --
 
-CREATE TABLE `clicker_skills` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `clicker_skills` (
+`id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `valeur` int(11) DEFAULT NULL,
   `position` int(11) DEFAULT NULL,
   `skill_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `clicker_skills`
+-- Contenu de la table `clicker_skills`
 --
 
 INSERT INTO `clicker_skills` (`id`, `user_id`, `valeur`, `position`, `skill_id`) VALUES
@@ -75,44 +73,484 @@ INSERT INTO `clicker_skills` (`id`, `user_id`, `valeur`, `position`, `skill_id`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `faves`
+-- Structure de la table `faves`
 --
 
-CREATE TABLE `faves` (
-  `id_fave` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `faves` (
+`id_fave` int(11) NOT NULL,
   `date` datetime NOT NULL,
   `type` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `user_id` int(11) NOT NULL,
   `content_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `faves`
+-- Contenu de la table `faves`
 --
 
 INSERT INTO `faves` (`id_fave`, `date`, `type`, `user_id`, `content_id`) VALUES
 (1, '2017-06-26 00:00:00', '', 1, 2),
-(2, '2017-06-26 00:00:00', '', 1, 3);
+(2, '2017-06-26 00:00:00', '', 1, 3),
+(5, '2017-06-08 00:00:00', '', 1, 9);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `liked_skills`
+-- Structure de la table `liked_result`
 --
 
-CREATE TABLE `liked_skills` (
+CREATE TABLE IF NOT EXISTS `liked_result` (
+`IDliked_result` int(11) NOT NULL,
+  `ID_porteur` int(11) NOT NULL,
+  `ID_user` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `liked_skills`
+--
+
+CREATE TABLE IF NOT EXISTS `liked_skills` (
+`ID_likedskills` int(11) NOT NULL,
   `ID_porteur` int(11) NOT NULL,
   `ID_skill` int(11) NOT NULL,
   `compteur` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=421 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `liked_skills`
+--
+
+INSERT INTO `liked_skills` (`ID_likedskills`, `ID_porteur`, `ID_skill`, `compteur`) VALUES
+(1, 1, 38, 2),
+(2, 1, 883, 2),
+(3, 1, 868, 1),
+(4, 1, 829, 1),
+(5, 1, 984, 1),
+(6, 1, 628, 1),
+(7, 1, 916, 1),
+(8, 1, 38, 2),
+(9, 1, 883, 2),
+(10, 1, 984, 1),
+(11, 1, 628, 1),
+(12, 1, 916, 1),
+(13, 1, 868, 1),
+(14, 1, 829, 1),
+(15, 1, 38, 2),
+(16, 1, 883, 2),
+(17, 1, 868, 1),
+(18, 1, 829, 1),
+(19, 1, 984, 1),
+(20, 1, 628, 1),
+(21, 1, 916, 1),
+(22, 1, 38, 2),
+(23, 1, 883, 2),
+(24, 1, 984, 1),
+(25, 1, 628, 1),
+(26, 1, 916, 1),
+(27, 1, 868, 1),
+(28, 1, 829, 1),
+(29, 1, 38, 2),
+(30, 1, 883, 2),
+(31, 1, 628, 1),
+(32, 1, 916, 1),
+(33, 1, 868, 1),
+(34, 1, 829, 1),
+(35, 1, 984, 1),
+(36, 1, 38, 2),
+(37, 1, 883, 2),
+(38, 1, 628, 1),
+(39, 1, 916, 1),
+(40, 1, 868, 1),
+(41, 1, 829, 1),
+(42, 1, 984, 1),
+(43, 1, 38, 2),
+(44, 1, 883, 2),
+(45, 1, 628, 1),
+(46, 1, 916, 1),
+(47, 1, 868, 1),
+(48, 1, 829, 1),
+(49, 1, 984, 1),
+(50, 1, 38, 2),
+(51, 1, 883, 2),
+(52, 1, 628, 1),
+(53, 1, 916, 1),
+(54, 1, 868, 1),
+(55, 1, 829, 1),
+(56, 1, 984, 1),
+(57, 1, 38, 2),
+(58, 1, 883, 2),
+(59, 1, 628, 1),
+(60, 1, 916, 1),
+(61, 1, 868, 1),
+(62, 1, 829, 1),
+(63, 1, 984, 1),
+(64, 1, 38, 2),
+(65, 1, 883, 2),
+(66, 1, 628, 1),
+(67, 1, 916, 1),
+(68, 1, 868, 1),
+(69, 1, 829, 1),
+(70, 1, 984, 1),
+(71, 1, 38, 2),
+(72, 1, 883, 2),
+(73, 1, 868, 1),
+(74, 1, 829, 1),
+(75, 1, 984, 1),
+(76, 1, 628, 1),
+(77, 1, 916, 1),
+(78, 1, 38, 2),
+(79, 1, 883, 2),
+(80, 1, 984, 1),
+(81, 1, 628, 1),
+(82, 1, 916, 1),
+(83, 1, 868, 1),
+(84, 1, 829, 1),
+(85, 1, 38, 2),
+(86, 1, 883, 2),
+(87, 1, 628, 1),
+(88, 1, 916, 1),
+(89, 1, 868, 1),
+(90, 1, 829, 1),
+(91, 1, 984, 1),
+(92, 1, 38, 2),
+(93, 1, 883, 2),
+(94, 1, 628, 1),
+(95, 1, 916, 1),
+(96, 1, 868, 1),
+(97, 1, 829, 1),
+(98, 1, 984, 1),
+(99, 1, 38, 2),
+(100, 1, 883, 2),
+(101, 1, 868, 1),
+(102, 1, 829, 1),
+(103, 1, 984, 1),
+(104, 1, 628, 1),
+(105, 1, 916, 1),
+(106, 1, 38, 2),
+(107, 1, 883, 2),
+(108, 1, 984, 1),
+(109, 1, 628, 1),
+(110, 1, 916, 1),
+(111, 1, 868, 1),
+(112, 1, 829, 1),
+(113, 1, 38, 2),
+(114, 1, 883, 2),
+(115, 1, 628, 1),
+(116, 1, 916, 1),
+(117, 1, 868, 1),
+(118, 1, 829, 1),
+(119, 1, 984, 1),
+(120, 1, 38, 2),
+(121, 1, 883, 2),
+(122, 1, 628, 1),
+(123, 1, 916, 1),
+(124, 1, 868, 1),
+(125, 1, 829, 1),
+(126, 1, 984, 1),
+(127, 1, 38, 2),
+(128, 1, 883, 2),
+(129, 1, 868, 1),
+(130, 1, 829, 1),
+(131, 1, 984, 1),
+(132, 1, 628, 1),
+(133, 1, 916, 1),
+(134, 1, 38, 2),
+(135, 1, 883, 2),
+(136, 1, 984, 1),
+(137, 1, 628, 1),
+(138, 1, 916, 1),
+(139, 1, 868, 1),
+(140, 1, 829, 1),
+(141, 1, 38, 2),
+(142, 1, 883, 2),
+(143, 1, 628, 1),
+(144, 1, 916, 1),
+(145, 1, 868, 1),
+(146, 1, 829, 1),
+(147, 1, 984, 1),
+(148, 1, 38, 2),
+(149, 1, 883, 2),
+(150, 1, 628, 1),
+(151, 1, 916, 1),
+(152, 1, 868, 1),
+(153, 1, 829, 1),
+(154, 1, 984, 1),
+(155, 1, 38, 2),
+(156, 1, 883, 2),
+(157, 1, 868, 1),
+(158, 1, 829, 1),
+(159, 1, 984, 1),
+(160, 1, 628, 1),
+(161, 1, 916, 1),
+(162, 1, 38, 2),
+(163, 1, 883, 2),
+(164, 1, 984, 1),
+(165, 1, 628, 1),
+(166, 1, 916, 1),
+(167, 1, 868, 1),
+(168, 1, 829, 1),
+(169, 1, 38, 2),
+(170, 1, 883, 2),
+(171, 1, 628, 1),
+(172, 1, 916, 1),
+(173, 1, 868, 1),
+(174, 1, 829, 1),
+(175, 1, 984, 1),
+(176, 1, 38, 2),
+(177, 1, 883, 2),
+(178, 1, 628, 1),
+(179, 1, 916, 1),
+(180, 1, 868, 1),
+(181, 1, 829, 1),
+(182, 1, 984, 1),
+(183, 1, 38, 2),
+(184, 1, 883, 2),
+(185, 1, 984, 1),
+(186, 1, 628, 1),
+(187, 1, 916, 1),
+(188, 1, 868, 1),
+(189, 1, 829, 1),
+(190, 1, 38, 2),
+(191, 1, 883, 2),
+(192, 1, 628, 1),
+(193, 1, 916, 1),
+(194, 1, 868, 1),
+(195, 1, 829, 1),
+(196, 1, 984, 1),
+(197, 1, 38, 2),
+(198, 1, 883, 2),
+(199, 1, 628, 1),
+(200, 1, 916, 1),
+(201, 1, 868, 1),
+(202, 1, 829, 1),
+(203, 1, 984, 1),
+(204, 1, 38, 2),
+(205, 1, 883, 2),
+(206, 1, 628, 1),
+(207, 1, 916, 1),
+(208, 1, 868, 1),
+(209, 1, 829, 1),
+(210, 1, 984, 1),
+(211, 1, 38, 2),
+(212, 1, 883, 2),
+(213, 1, 984, 1),
+(214, 1, 628, 1),
+(215, 1, 916, 1),
+(216, 1, 868, 1),
+(217, 1, 829, 1),
+(218, 1, 38, 2),
+(219, 1, 883, 2),
+(220, 1, 628, 1),
+(221, 1, 916, 1),
+(222, 1, 868, 1),
+(223, 1, 829, 1),
+(224, 1, 984, 1),
+(225, 1, 38, 2),
+(226, 1, 883, 2),
+(227, 1, 868, 1),
+(228, 1, 829, 1),
+(229, 1, 984, 1),
+(230, 1, 628, 1),
+(231, 1, 916, 1),
+(232, 1, 38, 2),
+(233, 1, 883, 2),
+(234, 1, 984, 1),
+(235, 1, 628, 1),
+(236, 1, 916, 1),
+(237, 1, 868, 1),
+(238, 1, 829, 1),
+(239, 1, 38, 2),
+(240, 1, 883, 2),
+(241, 1, 628, 1),
+(242, 1, 916, 1),
+(243, 1, 868, 1),
+(244, 1, 829, 1),
+(245, 1, 984, 1),
+(246, 1, 38, 2),
+(247, 1, 883, 2),
+(248, 1, 628, 1),
+(249, 1, 916, 1),
+(250, 1, 868, 1),
+(251, 1, 829, 1),
+(252, 1, 984, 1),
+(253, 1, 38, 2),
+(254, 1, 883, 2),
+(255, 1, 628, 1),
+(256, 1, 916, 1),
+(257, 1, 868, 1),
+(258, 1, 829, 1),
+(259, 1, 984, 1),
+(260, 1, 38, 2),
+(261, 1, 883, 2),
+(262, 1, 628, 1),
+(263, 1, 916, 1),
+(264, 1, 868, 1),
+(265, 1, 829, 1),
+(266, 1, 984, 1),
+(267, 1, 38, 2),
+(268, 1, 883, 2),
+(269, 1, 984, 1),
+(270, 1, 628, 1),
+(271, 1, 916, 1),
+(272, 1, 868, 1),
+(273, 1, 829, 1),
+(274, 1, 38, 2),
+(275, 1, 883, 2),
+(276, 1, 984, 1),
+(277, 1, 628, 1),
+(278, 1, 916, 1),
+(279, 1, 868, 1),
+(280, 1, 829, 1),
+(281, 1, 38, 2),
+(282, 1, 883, 2),
+(283, 1, 628, 1),
+(284, 1, 916, 1),
+(285, 1, 868, 1),
+(286, 1, 829, 1),
+(287, 1, 984, 1),
+(288, 1, 38, 2),
+(289, 1, 883, 2),
+(290, 1, 628, 1),
+(291, 1, 916, 1),
+(292, 1, 868, 1),
+(293, 1, 829, 1),
+(294, 1, 984, 1),
+(295, 1, 38, 2),
+(296, 1, 883, 2),
+(297, 1, 984, 1),
+(298, 1, 628, 1),
+(299, 1, 916, 1),
+(300, 1, 868, 1),
+(301, 1, 829, 1),
+(302, 1, 38, 2),
+(303, 1, 883, 2),
+(304, 1, 984, 1),
+(305, 1, 628, 1),
+(306, 1, 916, 1),
+(307, 1, 868, 1),
+(308, 1, 829, 1),
+(309, 1, 38, 2),
+(310, 1, 883, 2),
+(311, 1, 628, 1),
+(312, 1, 916, 1),
+(313, 1, 868, 1),
+(314, 1, 829, 1),
+(315, 1, 984, 1),
+(316, 1, 38, 2),
+(317, 1, 883, 2),
+(318, 1, 628, 1),
+(319, 1, 916, 1),
+(320, 1, 868, 1),
+(321, 1, 829, 1),
+(322, 1, 984, 1),
+(323, 1, 38, 2),
+(324, 1, 883, 2),
+(325, 1, 984, 1),
+(326, 1, 628, 1),
+(327, 1, 916, 1),
+(328, 1, 868, 1),
+(329, 1, 829, 1),
+(330, 1, 38, 2),
+(331, 1, 883, 2),
+(332, 1, 984, 1),
+(333, 1, 628, 1),
+(334, 1, 916, 1),
+(335, 1, 868, 1),
+(336, 1, 829, 1),
+(337, 1, 38, 2),
+(338, 1, 883, 2),
+(339, 1, 628, 1),
+(340, 1, 916, 1),
+(341, 1, 868, 1),
+(342, 1, 829, 1),
+(343, 1, 984, 1),
+(344, 1, 38, 2),
+(345, 1, 883, 2),
+(346, 1, 628, 1),
+(347, 1, 916, 1),
+(348, 1, 868, 1),
+(349, 1, 829, 1),
+(350, 1, 984, 1),
+(351, 1, 38, 2),
+(352, 1, 883, 2),
+(353, 1, 984, 1),
+(354, 1, 628, 1),
+(355, 1, 916, 1),
+(356, 1, 868, 1),
+(357, 1, 829, 1),
+(358, 1, 38, 2),
+(359, 1, 883, 2),
+(360, 1, 984, 1),
+(361, 1, 628, 1),
+(362, 1, 916, 1),
+(363, 1, 868, 1),
+(364, 1, 829, 1),
+(365, 1, 38, 2),
+(366, 1, 883, 2),
+(367, 1, 628, 1),
+(368, 1, 916, 1),
+(369, 1, 868, 1),
+(370, 1, 829, 1),
+(371, 1, 984, 1),
+(372, 1, 38, 2),
+(373, 1, 883, 2),
+(374, 1, 628, 1),
+(375, 1, 916, 1),
+(376, 1, 868, 1),
+(377, 1, 829, 1),
+(378, 1, 984, 1),
+(379, 1, 38, 2),
+(380, 1, 883, 2),
+(381, 1, 984, 1),
+(382, 1, 628, 1),
+(383, 1, 916, 1),
+(384, 1, 868, 1),
+(385, 1, 829, 1),
+(386, 1, 38, 2),
+(387, 1, 883, 2),
+(388, 1, 984, 1),
+(389, 1, 628, 1),
+(390, 1, 916, 1),
+(391, 1, 868, 1),
+(392, 1, 829, 1),
+(393, 1, 38, 2),
+(394, 1, 883, 2),
+(395, 1, 628, 1),
+(396, 1, 916, 1),
+(397, 1, 868, 1),
+(398, 1, 829, 1),
+(399, 1, 984, 1),
+(400, 1, 38, 2),
+(401, 1, 883, 2),
+(402, 1, 628, 1),
+(403, 1, 916, 1),
+(404, 1, 868, 1),
+(405, 1, 829, 1),
+(406, 1, 984, 1),
+(407, 1, 38, 2),
+(408, 1, 883, 2),
+(409, 1, 984, 1),
+(410, 1, 628, 1),
+(411, 1, 916, 1),
+(412, 1, 868, 1),
+(413, 1, 829, 1),
+(414, 1, 38, 2),
+(415, 1, 883, 2),
+(416, 1, 984, 1),
+(417, 1, 628, 1),
+(418, 1, 916, 1),
+(419, 1, 868, 1),
+(420, 1, 829, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `project_categories`
+-- Structure de la table `project_categories`
 --
 
-CREATE TABLE `project_categories` (
+CREATE TABLE IF NOT EXISTS `project_categories` (
   `cat_id` int(11) NOT NULL,
   `name` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `cat_id_parent` int(11) NOT NULL,
@@ -121,7 +559,7 @@ CREATE TABLE `project_categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `project_categories`
+-- Contenu de la table `project_categories`
 --
 
 INSERT INTO `project_categories` (`cat_id`, `name`, `cat_id_parent`, `cat_position`, `code_name`) VALUES
@@ -193,17 +631,17 @@ INSERT INTO `project_categories` (`cat_id`, `name`, `cat_id_parent`, `cat_positi
 -- --------------------------------------------------------
 
 --
--- Table structure for table `skills`
+-- Structure de la table `skills`
 --
 
-CREATE TABLE `skills` (
-  `skills_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `skills` (
+`skills_id` int(11) NOT NULL,
   `name` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `category_cat_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=993 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `skills`
+-- Contenu de la table `skills`
 --
 
 INSERT INTO `skills` (`skills_id`, `name`, `category_cat_id`) VALUES
@@ -215,7 +653,7 @@ INSERT INTO `skills` (`skills_id`, `name`, `category_cat_id`) VALUES
 (7, 'Bassoniste', 14),
 (8, 'Batteur', 14),
 (10, 'Chanteur', 14),
-(11, 'Chef d\'orchestre', 14),
+(11, 'Chef d''orchestre', 14),
 (12, 'Chanteur de choeur', 14),
 (16, 'Compositeur', 14),
 (17, 'Contrebassiste', 14),
@@ -365,11 +803,11 @@ INSERT INTO `skills` (`skills_id`, `name`, `category_cat_id`) VALUES
 (197, 'Imprimeur 3D', 25),
 (198, 'Programmeur', 12),
 (199, 'Pure data artist', 25),
-(200, 'Synthétiseur d\'image 3D', 25),
+(200, 'Synthétiseur d''image 3D', 25),
 (203, 'Chaisier', 26),
 (205, 'Ebeniste', 26),
 (206, 'Encadreur', 26),
-(207, 'Facteur d\'instruments', 26),
+(207, 'Facteur d''instruments', 26),
 (208, 'Luthier', 26),
 (210, 'Pipier', 26),
 (211, 'Restaurateur', 26),
@@ -619,7 +1057,7 @@ INSERT INTO `skills` (`skills_id`, `name`, `category_cat_id`) VALUES
 (538, 'Immunologue', 45),
 (539, 'Infectiologue', 45),
 (540, 'Infirmière', 45),
-(541, 'Médecin d\'urgence', 45),
+(541, 'Médecin d''urgence', 45),
 (542, 'Médecin du travail', 45),
 (543, 'Médecin esthétique', 45),
 (544, 'Médecin généraliste', 45),
@@ -643,7 +1081,7 @@ INSERT INTO `skills` (`skills_id`, `name`, `category_cat_id`) VALUES
 (563, 'Urologue', 45),
 (564, 'Vénérologue', 45),
 (565, 'Vétérinaire', 45),
-(566, 'Chargé d\'études', 46),
+(566, 'Chargé d''études', 46),
 (567, 'Analyste financier', 46),
 (569, 'Assistant comptable', 46),
 (570, 'Assistant de gestion', 46),
@@ -656,15 +1094,15 @@ INSERT INTO `skills` (`skills_id`, `name`, `category_cat_id`) VALUES
 (579, 'Contrôleur de gestion', 46),
 (581, 'Expert comptable', 46),
 (582, 'Gestionnaire de patrimoine', 46),
-(583, 'Ingénieur d\'affaires', 46),
+(583, 'Ingénieur d''affaires', 46),
 (584, 'Notaire', 46),
 (585, 'Office manager', 46),
 (586, 'Secrétaire comptable ', 46),
 (587, 'Trader', 46),
 (588, 'Administrateur des ventes', 47),
 (589, 'Business developper', 47),
-(590, 'Chargé d\'études marketing', 47),
-(591, 'Chargé d\'études média', 47),
+(590, 'Chargé d''études marketing', 47),
+(591, 'Chargé d''études média', 47),
 (592, 'Chargé de production', 47),
 (593, 'Chargé de programmation', 47),
 (594, 'Chef de produit marketing', 47),
@@ -676,7 +1114,7 @@ INSERT INTO `skills` (`skills_id`, `name`, `category_cat_id`) VALUES
 (600, 'Responsable clientèle', 47),
 (603, 'Responsable webmarketing', 47),
 (604, 'Planneur stratégique', 48),
-(605, 'Chargé d\'étude', 48),
+(605, 'Chargé d''étude', 48),
 (606, 'Chargé de RP', 48),
 (607, 'Community manager', 48),
 (608, 'Concepteur multimédia', 48),
@@ -699,7 +1137,7 @@ INSERT INTO `skills` (`skills_id`, `name`, `category_cat_id`) VALUES
 (629, 'Juge', 49),
 (630, 'Juge pour enfants', 49),
 (631, 'Juriste', 49),
-(632, 'Officier d\'État civil', 49),
+(632, 'Officier d''État civil', 49),
 (633, 'Procureur', 49),
 (634, 'Secrétaire juridique', 49),
 (635, 'Gestionnaire de paie', 50),
@@ -720,7 +1158,7 @@ INSERT INTO `skills` (`skills_id`, `name`, `category_cat_id`) VALUES
 (651, 'Cavalier', 51),
 (653, 'Coureur', 51),
 (654, 'Coureur automobile', 51),
-(655, 'Coureur d\'orientation', 51),
+(655, 'Coureur d''orientation', 51),
 (656, 'Cycliste', 51),
 (657, 'Décathlonien', 51),
 (658, 'Escrimeur', 51),
@@ -735,8 +1173,8 @@ INSERT INTO `skills` (`skills_id`, `name`, `category_cat_id`) VALUES
 (670, 'Hockeyeur sur glace', 51),
 (671, 'Horse-balleur', 51),
 (672, 'Joggeur', 51),
-(673, 'Joueur d\'e-sport', 51),
-(674, 'Joueur d\'échecs', 51),
+(673, 'Joueur d''e-sport', 51),
+(674, 'Joueur d''échecs', 51),
 (675, 'Joueur de Badminton', 51),
 (676, 'Joueur de Baseball', 51),
 (677, 'Joueur de Billard', 51),
@@ -804,7 +1242,7 @@ INSERT INTO `skills` (`skills_id`, `name`, `category_cat_id`) VALUES
 (742, 'Parachutiste', 52),
 (743, 'Parapentiste', 52),
 (744, 'Parkouriste', 52),
-(745, 'Pilote d\'ULM', 52),
+(745, 'Pilote d''ULM', 52),
 (746, 'Plongeur', 52),
 (747, 'Rafteur', 52),
 (748, 'Randonneur', 52),
@@ -829,15 +1267,15 @@ INSERT INTO `skills` (`skills_id`, `name`, `category_cat_id`) VALUES
 (770, 'Maître-chien', 53),
 (771, 'Nutritionniste', 53),
 (772, 'Pédologue', 53),
-(773, 'Pilote d\'avion', 53),
-(774, 'Pilote d\'hélicoptère', 53),
+(773, 'Pilote d''avion', 53),
+(774, 'Pilote d''hélicoptère', 53),
 (775, 'Pisteur secouriste', 53),
 (776, 'Professeur de langue des signes', 53),
 (777, 'Responsable logistique', 53),
 (778, 'Sage-femme', 53),
 (779, 'Sapeur-pompier', 53),
-(780, 'Technicien d\'intervention sociale', 53),
-(781, 'Technicien de la qualité de l\'eau', 53),
+(780, 'Technicien d''intervention sociale', 53),
+(781, 'Technicien de la qualité de l''eau', 53),
 (782, 'Technicien eau et installations', 53),
 (783, 'Technicien traitement déchets', 53),
 (784, 'Accompagnateur à la mobilité', 54),
@@ -850,7 +1288,7 @@ INSERT INTO `skills` (`skills_id`, `name`, `category_cat_id`) VALUES
 (792, 'Assistant maternel', 54),
 (793, 'Auxiliaire de vie', 54),
 (794, 'Conseiller conjugal et familial', 54),
-(796, 'Conseiller d\'insertion sociale', 54),
+(796, 'Conseiller d''insertion sociale', 54),
 (797, 'Conseiller en économie familiale', 54),
 (798, 'Éducateur de jeunes enfants', 54),
 (799, 'Éducateur spécialisé', 54),
@@ -865,7 +1303,7 @@ INSERT INTO `skills` (`skills_id`, `name`, `category_cat_id`) VALUES
 (808, 'Cuisinier', 55),
 (810, 'Économe', 55),
 (811, 'Garçon de café', 55),
-(812, 'Hôtesse d\'accueil', 55),
+(812, 'Hôtesse d''accueil', 55),
 (813, 'Pizzaïolo', 55),
 (814, 'Plongeur', 55),
 (816, 'Second de cuisine', 55),
@@ -899,18 +1337,18 @@ INSERT INTO `skills` (`skills_id`, `name`, `category_cat_id`) VALUES
 (846, 'Pêcheur', 57),
 (847, 'Pisciculteur', 57),
 (848, 'Viticulteur', 57),
-(849, 'Assistant d\'éducation', 58),
+(849, 'Assistant d''éducation', 58),
 (850, 'Auxiliaire de vie scolaire', 58),
 (851, 'Bibliothécaire', 58),
 (852, 'Conseiller en orientation', 58),
-(853, 'Directeur d\'école', 58),
+(853, 'Directeur d''école', 58),
 (854, 'Documentaliste', 58),
 (856, 'Maître de conférences', 58),
 (857, 'Professeur des écoles', 58),
 (859, 'Surveillant', 58),
 (860, 'Agencier', 9),
 (861, 'Animateur radio', 9),
-(862, 'Chef d\'édition', 9),
+(862, 'Chef d''édition', 9),
 (863, 'Chroniqueur presse', 9),
 (864, 'Chroniqueur radio', 9),
 (865, 'Correspondant', 9),
@@ -918,7 +1356,7 @@ INSERT INTO `skills` (`skills_id`, `name`, `category_cat_id`) VALUES
 (867, 'Critique musical', 9),
 (868, 'Dessinateur de presse', 9),
 (870, 'Envoyé spécial', 9),
-(871, 'Journaliste d\'enquête', 9),
+(871, 'Journaliste d''enquête', 9),
 (872, 'Journaliste mode', 9),
 (873, 'Journaliste politique', 9),
 (874, 'Journaliste radio', 9),
@@ -929,7 +1367,7 @@ INSERT INTO `skills` (`skills_id`, `name`, `category_cat_id`) VALUES
 (881, 'Rédacteur en chef', 9),
 (882, 'Reporter-photographe', 9),
 (883, 'Secrétaire de rédaction', 9),
-(884, 'Attaché d\'administration', 10),
+(884, 'Attaché d''administration', 10),
 (885, 'Attaché parlementaire', 10),
 (886, 'Chargé du protocole', 10),
 (887, 'Conseiller en organisation', 10),
@@ -951,7 +1389,7 @@ INSERT INTO `skills` (`skills_id`, `name`, `category_cat_id`) VALUES
 (909, 'Opérateur de saisie', 11),
 (910, 'Opérateur en PAO', 11),
 (911, 'Packager éditorial', 11),
-(912, 'Secrétaire d\'édition', 11),
+(912, 'Secrétaire d''édition', 11),
 (913, 'Secrétaire de rédaction', 11),
 (914, 'Traducteur', 11),
 (915, 'Acousticien', 12),
@@ -961,7 +1399,7 @@ INSERT INTO `skills` (`skills_id`, `name`, `category_cat_id`) VALUES
 (922, 'Assembleur mécanique de précision', 12),
 (923, 'Bobinier en matériel électrique', 12),
 (925, 'Chaudronnier', 12),
-(926, 'Chef d\'atelier', 12),
+(926, 'Chef d''atelier', 12),
 (927, 'Coboticien', 12),
 (928, 'Conducteur de ligne automatisée', 12),
 (929, 'Constructeur automobile', 12),
@@ -975,7 +1413,7 @@ INSERT INTO `skills` (`skills_id`, `name`, `category_cat_id`) VALUES
 (938, 'Ingénieur aéronautique', 12),
 (939, 'Ingénieur automaticien', 12),
 (941, 'Ingénieur construction navale', 12),
-(942, 'Ingénieur d\'essais', 12),
+(942, 'Ingénieur d''essais', 12),
 (944, 'Ingénieur électrotechnicien', 12),
 (945, 'Ingénieur énergies renouvelables', 12),
 (947, 'Ingénieur génie industriel', 12),
@@ -1019,11 +1457,11 @@ INSERT INTO `skills` (`skills_id`, `name`, `category_cat_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Structure de la table `users`
 --
 
-CREATE TABLE `users` (
-  `id_user` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `users` (
+`id_user` int(11) NOT NULL,
   `firstname` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `lastname` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
@@ -1035,89 +1473,104 @@ CREATE TABLE `users` (
   `validation_token` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
   `teamizy` int(11) NOT NULL DEFAULT '0',
   `announcement_read` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Contenu de la table `users`
 --
 
 INSERT INTO `users` (`id_user`, `firstname`, `lastname`, `email`, `password`, `credentials`, `capabilities`, `registration_date`, `password_token`, `validation_token`, `teamizy`, `announcement_read`) VALUES
-(1, 'John', 'Doe', 'johndoe@hackathon.fr', '$2y$10$mbYYgkmR9Gjl.zm5RJSo8uM13CqJqHikNGyYgJ1d0U/ZIfJYCb9Vi', 1, '[\"view\", \"member\"]', '2017-06-26 10:26:27', NULL, NULL, 0, '0000-00-00 00:00:00'),
-(2, 'Maria', 'Débé', 'mariadb@hackathon.fr', '$2y$10$mbYYgkmR9Gjl.zm5RJSo8uM13CqJqHikNGyYgJ1d0U/ZIfJYCb9Vi', 1, '[\"view\", \"member\"]', '2017-06-26 10:26:27', NULL, NULL, 0, '0000-00-00 00:00:00'),
-(3, 'Gill', 'Derai', 'gillderai@hackathon.fr', '$2y$10$mbYYgkmR9Gjl.zm5RJSo8uM13CqJqHikNGyYgJ1d0U/ZIfJYCb9Vi', 1, '[\"view\", \"member\"]', '2017-06-26 10:26:27', NULL, NULL, 0, '0000-00-00 00:00:00'),
-(4, 'Jean-michel', 'Breton', 'jmbreton@hackathon.fr', '$2y$10$mbYYgkmR9Gjl.zm5RJSo8uM13CqJqHikNGyYgJ1d0U/ZIfJYCb9Vi', 1, '[\"view\", \"member\"]', '2017-06-26 10:26:27', NULL, NULL, 0, '0000-00-00 00:00:00'),
-(5, 'Lucas', 'Melton', 'lucmelton@hackathon.fr', '$2y$10$mbYYgkmR9Gjl.zm5RJSo8uM13CqJqHikNGyYgJ1d0U/ZIfJYCb9Vi', 1, '[\"view\", \"member\"]', '2017-06-26 10:26:27', NULL, NULL, 0, '0000-00-00 00:00:00'),
-(6, 'Marie', 'xiaom', 'mariexiaom@hackathon.fr', '$2y$10$mbYYgkmR9Gjl.zm5RJSo8uM13CqJqHikNGyYgJ1d0U/ZIfJYCb9Vi', 1, '[\"view\", \"member\"]', '2017-06-26 10:26:27', NULL, NULL, 0, '0000-00-00 00:00:00'),
-(7, 'Francois', 'desjardin', 'francoisdes@hackathon.fr', '$2y$10$mbYYgkmR9Gjl.zm5RJSo8uM13CqJqHikNGyYgJ1d0U/ZIfJYCb9Vi', 1, '[\"view\", \"member\"]', '2017-06-26 10:26:27', NULL, NULL, 0, '0000-00-00 00:00:00'),
-(8, 'Georges', 'Abitbol', 'georgesabi@hackathon.fr', '$2y$10$mbYYgkmR9Gjl.zm5RJSo8uM13CqJqHikNGyYgJ1d0U/ZIfJYCb9Vi', 1, '[\"view\", \"member\"]', '2017-06-26 10:26:27', NULL, NULL, 0, '0000-00-00 00:00:00'),
-(9, 'Jean-Marc', 'Fraday', 'jmfradai@hackathon.fr', '$2y$10$mbYYgkmR9Gjl.zm5RJSo8uM13CqJqHikNGyYgJ1d0U/ZIfJYCb9Vi', 1, '[\"view\", \"member\"]', '2017-06-26 10:26:27', NULL, NULL, 0, '0000-00-00 00:00:00'),
-(10, 'Hirene', 'Golut', 'hireneg@hackathon.fr', '$2y$10$mbYYgkmR9Gjl.zm5RJSo8uM13CqJqHikNGyYgJ1d0U/ZIfJYCb9Vi', 1, '[\"view\", \"member\"]', '2017-06-26 10:26:27', NULL, NULL, 0, '0000-00-00 00:00:00');
+(1, 'John', 'Doe', 'johndoe@hackathon.fr', '$2y$10$mbYYgkmR9Gjl.zm5RJSo8uM13CqJqHikNGyYgJ1d0U/ZIfJYCb9Vi', 1, '["view", "member"]', '2017-06-26 10:26:27', NULL, NULL, 0, '0000-00-00 00:00:00'),
+(2, 'Maria', 'Débé', 'mariadb@hackathon.fr', '$2y$10$mbYYgkmR9Gjl.zm5RJSo8uM13CqJqHikNGyYgJ1d0U/ZIfJYCb9Vi', 1, '["view", "member"]', '2017-06-26 10:26:27', NULL, NULL, 0, '0000-00-00 00:00:00'),
+(3, 'Gill', 'Derai', 'gillderai@hackathon.fr', '$2y$10$mbYYgkmR9Gjl.zm5RJSo8uM13CqJqHikNGyYgJ1d0U/ZIfJYCb9Vi', 1, '["view", "member"]', '2017-06-26 10:26:27', NULL, NULL, 0, '0000-00-00 00:00:00'),
+(4, 'Jean-michel', 'Breton', 'jmbreton@hackathon.fr', '$2y$10$mbYYgkmR9Gjl.zm5RJSo8uM13CqJqHikNGyYgJ1d0U/ZIfJYCb9Vi', 1, '["view", "member"]', '2017-06-26 10:26:27', NULL, NULL, 0, '0000-00-00 00:00:00'),
+(5, 'Lucas', 'Melton', 'lucmelton@hackathon.fr', '$2y$10$mbYYgkmR9Gjl.zm5RJSo8uM13CqJqHikNGyYgJ1d0U/ZIfJYCb9Vi', 1, '["view", "member"]', '2017-06-26 10:26:27', NULL, NULL, 0, '0000-00-00 00:00:00'),
+(6, 'Marie', 'xiaom', 'mariexiaom@hackathon.fr', '$2y$10$mbYYgkmR9Gjl.zm5RJSo8uM13CqJqHikNGyYgJ1d0U/ZIfJYCb9Vi', 1, '["view", "member"]', '2017-06-26 10:26:27', NULL, NULL, 0, '0000-00-00 00:00:00'),
+(7, 'Francois', 'desjardin', 'francoisdes@hackathon.fr', '$2y$10$mbYYgkmR9Gjl.zm5RJSo8uM13CqJqHikNGyYgJ1d0U/ZIfJYCb9Vi', 1, '["view", "member"]', '2017-06-26 10:26:27', NULL, NULL, 0, '0000-00-00 00:00:00'),
+(8, 'Georges', 'Abitbol', 'georgesabi@hackathon.fr', '$2y$10$mbYYgkmR9Gjl.zm5RJSo8uM13CqJqHikNGyYgJ1d0U/ZIfJYCb9Vi', 1, '["view", "member"]', '2017-06-26 10:26:27', NULL, NULL, 0, '0000-00-00 00:00:00'),
+(9, 'Jean-Marc', 'Fraday', 'jmfradai@hackathon.fr', '$2y$10$mbYYgkmR9Gjl.zm5RJSo8uM13CqJqHikNGyYgJ1d0U/ZIfJYCb9Vi', 1, '["view", "member"]', '2017-06-26 10:26:27', NULL, NULL, 0, '0000-00-00 00:00:00'),
+(10, 'Hirene', 'Golut', 'hireneg@hackathon.fr', '$2y$10$mbYYgkmR9Gjl.zm5RJSo8uM13CqJqHikNGyYgJ1d0U/ZIfJYCb9Vi', 1, '["view", "member"]', '2017-06-26 10:26:27', NULL, NULL, 0, '0000-00-00 00:00:00');
 
 --
--- Indexes for dumped tables
+-- Index pour les tables exportées
 --
 
 --
--- Indexes for table `clicker_skills`
+-- Index pour la table `clicker_skills`
 --
 ALTER TABLE `clicker_skills`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `faves`
+-- Index pour la table `faves`
 --
 ALTER TABLE `faves`
-  ADD PRIMARY KEY (`id_fave`);
+ ADD PRIMARY KEY (`id_fave`);
 
 --
--- Indexes for table `liked_skills`
+-- Index pour la table `liked_result`
+--
+ALTER TABLE `liked_result`
+ ADD PRIMARY KEY (`IDliked_result`);
+
+--
+-- Index pour la table `liked_skills`
 --
 ALTER TABLE `liked_skills`
-  ADD PRIMARY KEY (`ID_porteur`);
+ ADD PRIMARY KEY (`ID_likedskills`);
 
 --
--- Indexes for table `project_categories`
+-- Index pour la table `project_categories`
 --
 ALTER TABLE `project_categories`
-  ADD PRIMARY KEY (`cat_id`);
+ ADD PRIMARY KEY (`cat_id`);
 
 --
--- Indexes for table `skills`
+-- Index pour la table `skills`
 --
 ALTER TABLE `skills`
-  ADD PRIMARY KEY (`skills_id`);
+ ADD PRIMARY KEY (`skills_id`);
 
 --
--- Indexes for table `users`
+-- Index pour la table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id_user`);
+ ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables exportées
 --
 
 --
--- AUTO_INCREMENT for table `clicker_skills`
+-- AUTO_INCREMENT pour la table `clicker_skills`
 --
 ALTER TABLE `clicker_skills`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=31;
 --
--- AUTO_INCREMENT for table `faves`
+-- AUTO_INCREMENT pour la table `faves`
 --
 ALTER TABLE `faves`
-  MODIFY `id_fave` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+MODIFY `id_fave` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT for table `skills`
+-- AUTO_INCREMENT pour la table `liked_result`
+--
+ALTER TABLE `liked_result`
+MODIFY `IDliked_result` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `liked_skills`
+--
+ALTER TABLE `liked_skills`
+MODIFY `ID_likedskills` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=421;
+--
+-- AUTO_INCREMENT pour la table `skills`
 --
 ALTER TABLE `skills`
-  MODIFY `skills_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=993;
+MODIFY `skills_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=993;
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;COMMIT;
-
+MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
