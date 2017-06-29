@@ -19,7 +19,7 @@ include("includes/resultat.php");
 
         </div>
     </div>
-test
+test2
 
 
 <script src="static/external/jquery/dist/jquery.min.js"></script>
